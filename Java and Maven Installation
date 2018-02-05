@@ -1,0 +1,21 @@
+*Installation of Java:
+yum install java-1.8.0-openjdk-devel
+Setting JAVA_HOME Environment variable
+Goto vi ~/.bashrc
+write-export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk"
+source ~/.bashrc
+
+*Installation of Maven: Refer this link(https://tecadmin.net/install-apache-maven-on-centos/#)
+Step 1 – Install Java
+Step 2 – Install Apache Maven
+cd /usr/local
+wget http://www-eu.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
+sudo tar xzf apache-maven-3.5.2-bin.tar.gz
+sudo ln -s apache-maven-3.5.2  maven
+Step 3 – Setup Environment Variables
+sudo vi /etc/profile.d/maven.sh
+export M2_HOME=/usr/local/maven
+export PATH=${M2_HOME}/bin:${PATH}
+source /etc/profile.d/maven.sh (Loading the environment variable)
+Step 4 – Check Version
+mvn -version
