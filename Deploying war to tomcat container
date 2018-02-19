@@ -1,0 +1,23 @@
+*Deploying war file created from maven to tomcat
+=>First installation of tomcat :
+1. wget tomcat 8 zip file from tomcat official site
+2. Move the zip file to the working directory of jenkins
+3. Unzip the file 
+4. Go to apache-tomcat folder and then conf file
+5. Edit the file server.xml by changing the Connector Port to 8090
+Note:
+-> Open the same port in VM by changing inbound rules
+-> If you are running the project in master server itself then port need to change because on 8080 port jenkins is listening and by default tomact also listen with same port.
+6. Go to bin folder of apache-tomcat and change the permission to executable by chmod +x *
+7. Go to conf folder of apache-tomcat and edit the tomcat-users.xml by
+  <role rolename="manager-script"/>
+  <role rolename="admin-gui"/>
+  <user username="tomcat" password="tomcat" roles="manager-script,admin-gui"/>
+  <user username="jenkin" password="jenkin" roles="manager-script"/>
+ 
+  create the role, user (either tomcat or jenkin) and remove the comment across the role.
+8. Go to bin folder and run ./startup.sh to start the tomcat 
+9. Now go to the browser and pig to the link ip:8080 or ip:8090 to get tomcat page.
+
+=> Creation of job
+Follow the Deploying_war_to_staging.doc
