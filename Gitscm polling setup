@@ -1,0 +1,13 @@
+*Github hook trigger for gitscm polling setup
+https://www.youtube.com/watch?v=uVXO95syoEg
+1.Install Github plugin
+2.Goto Manage Jenkins->Configure System
+3.Under Github click on Advanced button
+4.In Additional actions select convert login and password to token
+5.Select From login and password 
+6.Type login id and password then click create token credential
+7.Add Github server and select the credentials u have created and save it
+8.Goto project configuration and in general check github and paste the github link repo
+9. In trigger check github hook trigger   
+10.Goto github repo->settings under webhooks & services under services add service by choosing jenkins
+11.Paste the jenkins_url/github-webhook
