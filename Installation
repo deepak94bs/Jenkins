@@ -12,9 +12,12 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stab
 sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 sudo yum install jenkins
 
-*Installation of Java
-Jenkins requires Java in order to run, yet certain distros don't include this by default. To install the Open Java Development Kit (OpenJDK) run the following:
-sudo yum install java
+*Installation of Java:
+yum install java-1.8.0-openjdk-devel
+Setting JAVA_HOME Environment variable
+Goto vi ~/.bashrc
+write-export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk"
+source ~/.bashrc
 
 *Start/Stop
 sudo service jenkins start/stop/restart
